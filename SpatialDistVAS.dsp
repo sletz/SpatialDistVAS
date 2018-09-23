@@ -1,4 +1,5 @@
-/*Copyright (C) 2015 Vicente Alcantara Santana.
+/*
+Copyright (C) 2015 Vicente Alcantara Santana.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -13,7 +14,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-
 */
 
 declare name "Spatial Distortion";
@@ -104,8 +104,9 @@ distr = _,_ <: ((1-pan)*effectBranch, (pan)*effectBranch : *(wet),*(wet)), *(1-w
 		wet = masterGroup(hslider("[1]Wet [style:knob]",0,0,1,0.01));
 	};
 
-//To test waveShaper only
+// To test waveShaper only
 //process = waveShaper;
+//process = _,_ <: waveShaper,waveShaper;
 
 process = hgroup("Spatial Distortion", distr);
 
